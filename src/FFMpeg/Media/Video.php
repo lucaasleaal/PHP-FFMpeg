@@ -315,6 +315,11 @@ class Video extends Audio implements MediaTypeInterface
                 $pass[] = '-passlogfile';
                 $pass[] = $passPrefix;
             }
+            
+            if($format->getAudioCodec()=='aac'){
+                $pass[] = '-strict';
+                $pass[] = '-2';
+            }
 
             $pass[] = $outputPathfile;
 
